@@ -38,7 +38,7 @@ for i in range(len(babyMask)):
 
 #Wordcloud prolife text
 textLife = " ".join(str(tweet) for tweet in dfRemoveDuplicate.loc[dfRemoveDuplicate['Unnamed: 8'] == -1.0].clean_text)
-
+#Wordcloud in specific shape
 wordcloudLifetext = WordCloud(max_words = 50, background_color="white", stopwords = ["abortion", 'woman'], mask = transformed_mask, contour_color = "black", contour_width = 3).generate(textLife)
 
 fig, ax = plt.subplots()
@@ -46,13 +46,14 @@ plt.imshow(wordcloudLifetext, interpolation='bilinear')
 plt.axis("off")
 plt.show()
 
+#Wordcloud in normal square shape
 wordcloudLifetext = WordCloud(max_words = 50, background_color="white", stopwords = ["abortion", 'woman'], contour_color = "black", contour_width = 3).generate(textLife)
 
 
 
 
 
-fig.savefig('babyimage4.png', format='png', dpi=2400)
+#fig.savefig('babyimage4.png', format='png', dpi=2400)
 
 
 
@@ -77,8 +78,10 @@ for i in range(len(womanMask)):
 
 textChoice = " ".join(str(tweet) for tweet in dfRemoveDuplicate.loc[dfRemoveDuplicate['Unnamed: 8'] == 1.0].clean_text)
 
+#Wordcloud in the shape of a woman
 wordcloudChoiceText = WordCloud(max_words = 50, background_color="white", stopwords = ["abortion", 'woman'], mask = woman_mask, contour_color = "black", contour_width = 3).generate(textChoice)
 
+#Wordcloud in normal square shape
 wordcloudChoiceText = WordCloud(max_words = 50, background_color="white", stopwords = ["abortion", 'woman'], contour_color = "black", contour_width = 3).generate(textChoice)
 
 
@@ -92,7 +95,7 @@ plt.show()
 
 
 # Do the plot code
-fig.savefig('prochoice1.png', format='png', dpi=2400)
+#fig.savefig('prochoice1.png', format='png', dpi=2400)
 
 #fig.savefig('babyimage2.svg', format='svg', dpi=10000)
 
